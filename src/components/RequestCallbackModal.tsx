@@ -29,6 +29,24 @@ interface RequestCallbackModalProps {
   productName?: string;
 }
 
+const WHATSAPP_NUMBER = '918850205805'; // +91 8850205805
+
+function openWhatsAppWithCallbackRequest(data: CallbackForm) {
+  const lines = [
+    '📞 Callback Request',
+    `Name: ${data.name}`,
+    `Phone: ${data.phone}`,
+    `Product: ${data.product?.trim() ? data.product.trim() : '-'}`,
+    `Page: ${window.location.href}`,
+  ];
+
+  const text = encodeURIComponent(lines.join('\n'));
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+  // Open WhatsApp chat with prefilled message (user taps Send)
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 export default function RequestCallbackModal({
   open,
   onOpenChange,
@@ -50,6 +68,9 @@ export default function RequestCallbackModal({
   });
 
   const onSubmit = async (data: CallbackForm) => {
+    // IMPORTANT: open WhatsApp immediately (before any await) to avoid popup blockers
+    openWhatsAppWithCallbackRequest(data);
+
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
