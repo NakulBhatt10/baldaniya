@@ -22,6 +22,47 @@ export default function PaymentPage() {
 
   const order = getOrder(orderId || '');
 
+  // ✅ ADDED (WhatsApp number)
+  const ADMIN_NUMBER = "919699721211"; // +91 without +
+
+  // ✅ ADDED (Open WhatsApp with combined text)
+  const openWhatsApp = ({
+    name,
+    phone,
+    address,
+    city,
+    state,
+    pincode,
+    utr,
+    orderId,
+    amount,
+  }: {
+    name: string;
+    phone: string;
+    address: string;
+    city: string;
+    state: string;
+    pincode: string;
+    utr: string;
+    orderId: string;
+    amount: string;
+  }) => {
+    const message =
+`✅ Payment Confirmation
+Order ID: ${orderId || "-"}
+Name: ${name || "-"}
+Phone: ${phone || "-"}
+Address: ${address || "-"}
+City/State/Pincode: ${city || "-"}, ${state || "-"} - ${pincode || "-"}
+Amount: ${amount || "-"}
+UTR/Txn: ${utr || "-"}
+
+(Please attach payment screenshot here.)`;
+
+    const url = `https://wa.me/${ADMIN_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   if (!order) {
     return (
       <div className="min-h-screen flex flex-col">
@@ -76,6 +117,19 @@ export default function PaymentPage() {
     toast({
       title: 'Payment Submitted!',
       description: 'We will verify and confirm on phone/WhatsApp.',
+    });
+
+    // ✅ ADDED: Open WhatsApp with all details
+    openWhatsApp({
+      orderId: order.id,
+      amount: formatPrice(order.total),
+      name: order.customer.name,
+      phone: order.customer.phone,
+      address: order.customer.address,
+      city: order.customer.city,
+      state: order.customer.state,
+      pincode: order.customer.pincode,
+      utr: utr,
     });
 
     navigate(`/order/${order.id}`);
@@ -135,6 +189,10 @@ export default function PaymentPage() {
             </h2>
             <div className="w-48 h-48 mx-auto bg-muted rounded-lg flex items-center justify-center mb-4">
               <div className="text-center">
+                <div className="w-70 h-70 overflow-hidden rounded-lg bg-primary flex items-center justify-center">
+                  <img src="/payment.jpeg" alt="Puzzle Wood" className="w-full h-full object-cover" />
+                </div>
+
                 <p className="text-sm text-muted-foreground">QR Code</p>
                 <p className="text-xs text-muted-foreground">(Placeholder)</p>
               </div>

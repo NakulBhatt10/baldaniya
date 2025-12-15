@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { ArrowRight, CreditCard, ShoppingBag, Truck, Shield, Star, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -55,6 +56,17 @@ export default function HomePage() {
   const bestsellers = getBestsellers();
   const featured = getFeaturedProducts();
 
+  // ✅ ADDED: Hero slideshow logic
+  const heroImages = ['/mf1.png', '/safety3.png', '/kids2.png', '/woodanimal1.png'];
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setBgIndex((i) => (i + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -62,17 +74,32 @@ export default function HomePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-background to-muted">
-          <div className="absolute inset-0 opacity-5">
+          {/* ✅ ADDED: Slideshow background ONLY within hero */}
+          <div className="absolute inset-0 z-0">
+            {heroImages.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                  i === bgIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+
+          <div className="absolute inset-0 opacity-5 z-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary))_0%,transparent_50%)]" />
           </div>
           
-          <div className="container mx-auto px-4 py-16 md:py-24 relative">
+          <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
             <div className="max-w-3xl mx-auto text-center">
               <Badge className="mb-4 bg-highlight/20 text-highlight-foreground border-highlight/30">
                 Handcrafted in India
               </Badge>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-                MDF 3D Wooden Puzzles
+                Puzzle Wood
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 Discover the art of precision craftsmanship. Build stunning 3D models from premium MDF wood pieces.
@@ -236,7 +263,7 @@ export default function HomePage() {
               Ready to Start Building?
             </h2>
             <p className="text-highlight-foreground/80 text-lg mb-8 max-w-xl mx-auto">
-              Explore our collection of premium MDF 3D wooden puzzles and find your next project.
+              Explore our collection of premium Puzzle Wood and find your next project.
             </p>
             <Button asChild size="xl" variant="default" className="bg-primary hover:bg-primary/90">
               <Link to="/shop">

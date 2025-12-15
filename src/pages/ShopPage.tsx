@@ -263,7 +263,7 @@ export default function ShopPage() {
             Shop All Products
           </h1>
           <p className="text-muted-foreground">
-            Discover our collection of {products.length} premium MDF 3D wooden puzzles
+            Discover our collection of {products.length} premium Puzzle Wood
           </p>
         </div>
 

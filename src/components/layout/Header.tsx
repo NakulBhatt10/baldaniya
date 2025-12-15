@@ -47,10 +47,15 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 shrink-0">
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">B</span>
+                <div className="w-10 h-10 overflow-hidden rounded-lg bg-primary flex items-center justify-center">
+  <img src="/logo.png" alt="Puzzle Wood" className="w-full h-full object-cover" />
+</div>
+
+
+
               </div>
               <span className="font-display text-xl font-semibold text-foreground hidden sm:block">
-                Baldaniya.Com
+                Puzzle Wood
               </span>
             </Link>
 

@@ -186,7 +186,7 @@ export default function HowToPayPage() {
               Ready to Order?
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Browse our collection of premium MDF 3D wooden puzzles and place your order today.
+              Browse our collection of premium Puzzle Wood and place your order today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">

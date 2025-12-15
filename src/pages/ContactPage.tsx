@@ -106,7 +106,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">info@baldaniya.com</p>
+                      <p className="text-muted-foreground">baldaniya.com@gmail.com</p>
                     </div>
                   </div>
 

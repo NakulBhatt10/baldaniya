@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="font-display text-xl font-semibold">Baldaniya.Com</span>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Premium MDF 3D Wooden Puzzles crafted with precision and passion. 
+              Premium Puzzle Wood crafted with precision and passion. 
               Transform your space with our handcrafted wooden creations.
             </p>
           </div>
@@ -81,11 +81,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-primary-foreground/70">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                Thane, Maharashtra, India
+                101, 1st floor, Aadharshilla Premisis co.op. Society Ltd., Mahajan Wadi, Penkarpada, Nr. Dahisar Checknaka, Mira Road (East), Thane - 401107, Mumbai, Maharashtra, India.
               </li>
               <li className="flex items-center gap-2 text-sm text-primary-foreground/70">
                 <Mail className="h-4 w-4" />
-                info@baldaniya.com
+                baldaniya.com@gmail.com
               </li>
             </ul>
           </div>
