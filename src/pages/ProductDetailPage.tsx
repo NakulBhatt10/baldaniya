@@ -260,10 +260,10 @@ export default function ProductDetailPage() {
               <div className="mt-6 p-4 rounded-lg bg-muted/50 text-center">
                 <p className="text-sm text-muted-foreground mb-1">Need help? Call us directly</p>
                 <a
-                  href="tel:08048606609"
+                  href="tel:9699721211"
                   className="font-display text-lg font-semibold text-primary hover:underline"
                 >
-                  08048606609
+                  9699721211
                 </a>
               </div>
             </div>

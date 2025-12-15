@@ -196,7 +196,7 @@ export default function HowToPayPage() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                <a href="tel:08048606609">
+                <a href="tel:9699721211">
                   <Phone className="h-5 w-5 mr-2" />
                   Call for Help
                 </a>

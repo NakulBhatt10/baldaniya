@@ -42,7 +42,7 @@ export default function OrderStatusPage() {
               <Link to="/shop">Continue Shopping</Link>
             </Button>
             <Button asChild variant="outline" className="gap-2">
-              <a href="tel:08048606609">
+              <a href="tel:9699721211">
                 <Phone className="h-4 w-4" />
                 Contact Support
               </a>
@@ -227,9 +227,9 @@ export default function OrderStatusPage() {
           <div className="text-center">
             <p className="text-sm text-muted-foreground mb-3">Questions about your order?</p>
             <Button asChild variant="outline" className="gap-2">
-              <a href="tel:08048606609">
+              <a href="tel:9699721211">
                 <Phone className="h-4 w-4" />
-                Call 08048606609
+                Call 9699721211
               </a>
             </Button>
           </div>

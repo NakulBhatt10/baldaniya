@@ -82,10 +82,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-foreground">Phone</h3>
                       <a
-                        href="tel:08048606609"
+                        href="tel:9699721211"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        08048606609
+                        9699721211
                       </a>
                     </div>
                   </div>

@@ -242,9 +242,9 @@ export default function PaymentPage() {
           <div className="text-center">
             <p className="text-sm text-muted-foreground mb-2">Need help with payment?</p>
             <Button asChild variant="outline" className="gap-2">
-              <a href="tel:08048606609">
+              <a href="tel:9699721211">
                 <Phone className="h-4 w-4" />
-                Call 08048606609
+                Call 9699721211
               </a>
             </Button>
           </div>

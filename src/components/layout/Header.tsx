@@ -111,9 +111,11 @@ export default function Header() {
                 size="sm"
                 className="hidden sm:flex gap-2"
               >
-                <a href="tel:08048606609">
+                <a href="tel:Vinod Baldaniya 
+9699721211">
                   <Phone className="h-4 w-4" />
-                  <span className="hidden lg:inline">08048606609</span>
+                  <span className="hidden lg:inline">Vinod Baldaniya 
+9699721211</span>
                 </a>
               </Button>
 
@@ -155,9 +157,10 @@ export default function Header() {
                       Request Callback
                     </Button>
                     <Button asChild variant="outline" className="gap-2">
-                      <a href="tel:08048606609">
+                      <a href="tel:9699721211">
                         <Phone className="h-4 w-4" />
-                        Call: 08048606609
+                        Call: Vinod Baldaniya 
+9699721211
                       </a>
                     </Button>
                   </nav>
