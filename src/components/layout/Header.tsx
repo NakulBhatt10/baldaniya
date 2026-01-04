@@ -48,7 +48,7 @@ export default function Header() {
             <Link to="/" className="flex items-center gap-2 shrink-0">
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <div className="w-10 h-10 overflow-hidden rounded-lg bg-primary flex items-center justify-center">
-  <img src="/logo.png" alt="Puzzle Wood" className="w-full h-full object-cover" />
+  <img src="/logomain.jpeg" alt="Puzzle Wood" className="w-full h-full object-cover" />
 </div>
 
 
